@@ -43,7 +43,7 @@ npx nx serve dashboard
 - **Frontend**: http://localhost:4200
 - **Backend API**: http://localhost:3003/api
 - **API Documentation**: http://localhost:3003/api-docs (Swagger is enabled)
-- **API Req Postman collectiom: https://.postman.co/workspace/My-Workspace~dce6eeda-53a1-45c4-8a80-b2963bd03f24/collection/26305604-f755e564-7d1a-41b0-9bec-44216b859890?action=share&creator=26305604&active-environment=26305604-8da6d5c1-7f59-4a98-848a-a02f939f45b3
+- **API Req Postman collectiom: https://app.postman.co/workspace/My-Workspace~dce6eeda-53a1-45c4-8a80-b2963bd03f24/collection/26305604-f755e564-7d1a-41b0-9bec-44216b859890?action=share&creator=26305604&active-environment=26305604-8da6d5c1-7f59-4a98-848a-a02f939f45b3
 
 #### 5. Demo Credentials
 The application includes seeded demo users:
