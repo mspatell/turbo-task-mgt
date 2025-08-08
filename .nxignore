@@ -1,0 +1,29 @@
+# Ignore build outputs
+dist
+build
+.next
+.turbo
+
+# Ignore cache directories
+.nx
+node_modules/.cache
+.cache
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/settings.json
+.idea
+
+# Ignore logs
+*.log
+logs
+
+# Ignore temp files
+tmp
+temp
+
+# Ignore webpack workspace data directories
+nx/workspace-data
