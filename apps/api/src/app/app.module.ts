@@ -4,9 +4,6 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { APP_GUARD } from '@nestjs/core';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
 // Entities
 import { User, Organization, Task, AuditLog } from '../entities';
 
@@ -50,14 +47,12 @@ import { OrganizationsController } from '../organizations/organizations.controll
     }),
   ],
   controllers: [
-    AppController,
     AuthController,
     TaskController,
     AuditController,
     OrganizationsController,
   ],
   providers: [
-    AppService,
     AuthService,
     JwtStrategy,
     LocalStrategy,
