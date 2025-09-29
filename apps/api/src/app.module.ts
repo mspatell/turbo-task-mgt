@@ -5,25 +5,25 @@ import { PassportModule } from '@nestjs/passport';
 import { APP_GUARD } from '@nestjs/core';
 
 // Entities
-import { User, Organization, Task, AuditLog } from '../entities';
+import { User, Organization, Task, AuditLog } from './entities';
 
 // Auth
-import { AuthController } from '../auth/auth.controller';
-import { AuthService } from '../auth/auth.service';
-import { JwtStrategy } from '../auth/jwt.strategy';
-import { LocalStrategy } from '../auth/local.strategy';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { AuthController } from './auth/auth.controller';
+import { AuthService } from './auth/auth.service';
+import { JwtStrategy } from './auth/jwt.strategy';
+import { LocalStrategy } from './auth/local.strategy';
+import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { RolesGuard } from '@turbo-vets/auth';
 
 // Services
-import { AuditService } from '../services/audit.service';
-import { DataSeederService } from '../seeders/data-seeder.service';
+import { AuditService } from './services/audit.service';
+import { DataSeederService } from './seeders/data-seeder.service';
 
 // Controllers
-import { TaskController } from '../tasks/task.controller';
-import { TaskService } from '../tasks/task.service';
-import { AuditController } from '../audit/audit.controller';
-import { OrganizationsController } from '../organizations/organizations.controller';
+import { TaskController } from './tasks/task.controller';
+import { TaskService } from './tasks/task.service';
+import { AuditController } from './audit/audit.controller';
+import { OrganizationsController } from './organizations/organizations.controller';
 
 @Module({
   imports: [
