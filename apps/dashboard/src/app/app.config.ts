@@ -10,11 +10,9 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { appRoutes } from './app.routes';
-import { authReducer } from './store/auth.reducer';
-import { taskReducer } from './store/task.reducer';
-import { AuthEffects } from './store/auth.effects';
-import { TaskEffects } from './store/task.effects';
-import { AuthInterceptor } from './auth/auth.interceptor';
+import { authReducer, AuthEffects } from './store/auth';
+import { taskReducer, TaskEffects } from './store/tasks';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [

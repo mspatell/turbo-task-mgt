@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { AuthState } from './auth.reducer';
-import { TaskState } from './task.reducer';
-import { TaskStatus } from '../shared/models';
+import { AuthState } from './auth/auth.reducer';
+import { TaskState } from './tasks/task.reducer';
+import { TaskStatus } from '@turbo-vets/data';
 
 // Auth Selectors
 export const selectAuthState = createFeatureSelector<AuthState>('auth');
@@ -132,7 +132,7 @@ export const selectTaskCategories = createSelector(
   selectAllTasks,
   (tasks) => {
     const taskArray = Array.isArray(tasks) ? tasks : [];
-    const categories = new Set(taskArray.filter(task => task && task.category).map(task => task.category));
+    const categories = new Set(taskArray.filter(task => task && task.category).map(task => task.category as string));
     return Array.from(categories);
   }
 );

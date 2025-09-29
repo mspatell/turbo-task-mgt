@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
-import { AuthGuard } from './auth/auth.guard';
-import { AdminGuard } from './auth/admin.guard';
+import { AuthGuard } from './features/auth/guards/auth.guard';
+import { AdminGuard } from './features/auth/guards/admin.guard';
 
 export const appRoutes: Route[] = [
   {
@@ -9,21 +9,21 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'login',
-    loadComponent: () => import('./auth/login.component').then(m => m.LoginComponent)
+    loadComponent: () => import('./features/auth/components/login.component').then(m => m.LoginComponent)
   },
   {
     path: 'register',
-    loadComponent: () => import('./auth/register.component').then(m => m.RegisterComponent)
+    loadComponent: () => import('./features/auth/components/register.component').then(m => m.RegisterComponent)
   },
   {
     path: 'dashboard',
     canActivate: [AuthGuard],
-    loadComponent: () => import('./tasks/dashboard.component').then(m => m.DashboardComponent)
+    loadComponent: () => import('./features/dashboard/components/dashboard.component').then(m => m.DashboardComponent)
   },
   {
     path: 'audit',
     canActivate: [AuthGuard, AdminGuard],
-    loadComponent: () => import('./audit/audit-log.component').then(m => m.AuditLogComponent)
+    loadComponent: () => import('./features/audit/components/audit-log.component').then(m => m.AuditLogComponent)
   },
   {
     path: '**',

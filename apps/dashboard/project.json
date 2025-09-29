@@ -3,7 +3,7 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/dashboard/src",
+  "sourceRoot": "apps/dashboard",
   "tags": [],
   "targets": {
     "build": {
@@ -11,7 +11,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/dashboard",
-        "browser": "apps/dashboard/src/main.ts",
+  "browser": "apps/dashboard/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/dashboard/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
@@ -21,7 +21,7 @@
             "input": "apps/dashboard/public"
           }
         ],
-        "styles": ["apps/dashboard/src/styles.scss"]
+  "styles": ["apps/dashboard/styles.scss"]
       },
       "configurations": {
         "production": {

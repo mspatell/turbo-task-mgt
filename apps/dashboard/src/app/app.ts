@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
-import * as AuthActions from './store/auth.actions';
+import * as AuthActions from './store/auth/auth.actions';
 
 @Component({
   imports: [RouterModule],
