@@ -1,8 +1,4 @@
-export enum UserRole {
-  OWNER = 'owner',
-  ADMIN = 'admin',
-  VIEWER = 'viewer',
-}
+import { UserRole } from '@turbo-vets/data';
 
 export interface AuthUser {
   id: string;

@@ -1,104 +1,97 @@
-export interface IUser {
+import { UserRole, TaskStatus, TaskPriority, TaskCategory } from '../enums';
+
+export interface User {
   id: string;
   email: string;
   firstName: string;
   lastName: string;
-  role: string; // Changed to string to avoid conflict
+  role: UserRole;
   isActive: boolean;
   organizationId?: string;
-  organization?: IOrganization;
+  organization?: Organization;
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ICreateUser {
+export interface CreateUser {
   email: string;
   password: string;
   firstName: string;
   lastName: string;
-  role?: string;
+  role?: UserRole;
   organizationId?: string;
 }
 
-export interface IUpdateUser {
+export interface UpdateUser {
   email?: string;
   firstName?: string;
   lastName?: string;
-  role?: string;
+  role?: UserRole;
   isActive?: boolean;
   organizationId?: string;
 }
 
-export interface IOrganization {
+export interface Organization {
   id: string;
   name: string;
   description?: string;
   isActive: boolean;
   parentId?: string;
-  parent?: IOrganization;
-  children?: IOrganization[];
-  users?: IUser[];
-  tasks?: ITask[];
+  parent?: Organization;
+  children?: Organization[];
+  users?: User[];
+  tasks?: Task[];
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ICreateOrganization {
+export interface CreateOrganization {
   name: string;
   description?: string;
   parentId?: string;
 }
 
-export interface IUpdateOrganization {
+export interface UpdateOrganization {
   name?: string;
   description?: string;
   isActive?: boolean;
   parentId?: string;
 }
 
-export enum TaskStatus {
-  PENDING = 'pending',
-  IN_PROGRESS = 'in_progress',
-  COMPLETED = 'completed',
-  CANCELLED = 'cancelled',
-}
 
-export enum TaskPriority {
-  LOW = 'low',
-  MEDIUM = 'medium',
-  HIGH = 'high',
-  CRITICAL = 'critical',
-}
 
-export interface ITask {
+export interface Task {
   id: string;
   title: string;
   description?: string;
   status: TaskStatus;
   priority: TaskPriority;
+  category?: TaskCategory;
   dueDate?: Date;
   assignedToId?: string;
-  assignedTo?: IUser;
+  assignedTo?: User;
   organizationId?: string;
-  organization?: IOrganization;
+  organization?: Organization;
   createdAt: Date;
   updatedAt: Date;
 }
 
-export interface ICreateTask {
+export interface CreateTask {
   title: string;
   description?: string;
   priority?: TaskPriority;
+  category?: TaskCategory;
   dueDate?: Date;
   assignedToId?: string;
   organizationId?: string;
 }
 
-export interface IUpdateTask {
+export interface UpdateTask {
   title?: string;
   description?: string;
   status?: TaskStatus;
   priority?: TaskPriority;
+  category?: TaskCategory;
   dueDate?: Date;
   assignedToId?: string;
 }
@@ -118,15 +111,15 @@ export enum AuditResource {
   AUTH = 'auth',
 }
 
-export interface IAuditLog {
+export interface AuditLog {
   id: string;
   action: AuditAction;
   resource: AuditResource;
   resourceId?: string;
   userId?: string;
-  user?: IUser;
+  user?: User;
   organizationId?: string;
-  organization?: IOrganization;
+  organization?: Organization;
   details?: Record<string, any>;
   ipAddress?: string;
   userAgent?: string;

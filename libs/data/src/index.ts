@@ -1,4 +1,3 @@
-// Export all interfaces and DTOs
+export * from './enums';
 export * from './interfaces';
-export * from './dtos/auth.dto';
-export * from './dtos/api.dto';
+export * from './dtos';

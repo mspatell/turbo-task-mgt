@@ -1,4 +1,4 @@
-import { UserRole } from '../types';
+import { UserRole } from '@turbo-vets/data';
 
 /**
  * Utility functions for authentication and authorization

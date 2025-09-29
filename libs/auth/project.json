@@ -11,7 +11,8 @@
       "options": {
         "outputPath": "dist/libs/auth",
         "main": "libs/auth/src/index.ts",
-        "tsConfig": "libs/auth/tsconfig.lib.json"
+        "tsConfig": "libs/auth/tsconfig.lib.json",
+        "external": ["@turbo-vets/data"]
       }
     },
     "lint": {

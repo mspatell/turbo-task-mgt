@@ -1,8 +1,4 @@
-export enum UserRole {
-  OWNER = 'owner',
-  ADMIN = 'admin',
-  VIEWER = 'viewer',
-}
+import { UserRole, TaskStatus, TaskPriority, TaskCategory } from '../enums';
 
 // User DTOs
 export interface CreateUserDto {
@@ -63,17 +59,38 @@ export interface OrganizationResponseDto {
 export interface CreateTaskDto {
   title: string;
   description?: string;
-  priority?: 'low' | 'medium' | 'high' | 'critical';
+  priority?: TaskPriority;
+  category?: TaskCategory;
   dueDate?: Date;
   assignedToId?: string;
   organizationId?: string;
 }
 
+export interface CreateTaskRequest {
+  title: string;
+  description?: string;
+  priority?: TaskPriority;
+  category?: TaskCategory;
+  dueDate?: Date;
+  assignedToId?: string;
+}
+
 export interface UpdateTaskDto {
   title?: string;
   description?: string;
-  status?: 'pending' | 'in_progress' | 'completed' | 'cancelled';
-  priority?: 'low' | 'medium' | 'high' | 'critical';
+  status?: TaskStatus;
+  priority?: TaskPriority;
+  category?: TaskCategory;
+  dueDate?: Date;
+  assignedToId?: string;
+}
+
+export interface UpdateTaskRequest {
+  title?: string;
+  description?: string;
+  status?: TaskStatus;
+  priority?: TaskPriority;
+  category?: TaskCategory;
   dueDate?: Date;
   assignedToId?: string;
 }
@@ -82,8 +99,9 @@ export interface TaskResponseDto {
   id: string;
   title: string;
   description?: string;
-  status: 'pending' | 'in_progress' | 'completed' | 'cancelled';
-  priority: 'low' | 'medium' | 'high' | 'critical';
+  status: TaskStatus;
+  priority: TaskPriority;
+  category?: TaskCategory;
   dueDate?: Date;
   assignedToId?: string;
   organizationId?: string;
@@ -124,8 +142,9 @@ export interface UserQueryDto extends PaginationDto {
 
 export interface TaskQueryDto extends PaginationDto {
   search?: string;
-  status?: 'pending' | 'in_progress' | 'completed' | 'cancelled';
-  priority?: 'low' | 'medium' | 'high' | 'critical';
+  status?: TaskStatus;
+  priority?: TaskPriority;
+  category?: TaskCategory;
   assignedToId?: string;
   organizationId?: string;
   dueBefore?: Date;
@@ -136,4 +155,40 @@ export interface OrganizationQueryDto extends PaginationDto {
   search?: string;
   isActive?: boolean;
   parentId?: string;
+}
+
+// Audit DTOs
+export interface AuditLogQuery extends PaginationDto {
+  action?: string;
+  entityType?: string;
+  entityId?: string;
+  userId?: string;
+  startDate?: Date;
+  endDate?: Date;
+  offset?: number;
+}
+
+export interface AuditLogsResponse extends PaginatedResponseDto<AuditLogDto> {}
+
+export interface AuditLogDto {
+  id: string;
+  action: string;
+  entityType: string;
+  entityId?: string;
+  userId?: string;
+  organizationId?: string;
+  oldValues?: Record<string, any>;
+  newValues?: Record<string, any>;
+  ipAddress?: string;
+  userAgent?: string;
+  timestamp: Date;
+  resource: string;
+  createdAt: Date;
+  details?: string;
+  user?: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+  };
 }
