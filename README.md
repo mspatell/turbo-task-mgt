@@ -16,14 +16,14 @@ A modern task management system built with NX monorepo architecture, featuring s
 #### 1. Clone and Install Dependencies
 ```bash
 git clone <repository-url>
-cd turboVets
+cd turbo-task-mgt
 npm install
 ```
 
 #### 2. Database Setup
 ```bash
 # Create PostgreSQL database
-createdb turbo_vets
+createdb turbo_task_mgt_db
 
 # Set up environment variables
 cp .env.example .env
@@ -42,8 +42,8 @@ npx nx serve dashboard
 #### 4. Access the Applications
 - **Frontend**: http://localhost:4200
 - **Backend API**: http://localhost:3003/api
-- **API Documentation**: http://localhost:3003/api-docs (Swagger is enabled)
-- **API Req Postman collectiom: https://app.postman.co/workspace/My-Workspace~dce6eeda-53a1-45c4-8a80-b2963bd03f24/collection/26305604-f755e564-7d1a-41b0-9bec-44216b859890?action=share&creator=26305604&active-environment=26305604-8da6d5c1-7f59-4a98-848a-a02f939f45b3
+- **API Documentation**: http://localhost:3003/api/docs (Swagger is enabled)
+- **API Req Postman collectiom: [Link](https://github.com/mspatell/turbo-task-mgt/blob/main/TurboVets-API-Postman-Collection.json)
 
 #### 5. Demo Credentials
 The application includes seeded demo users:
