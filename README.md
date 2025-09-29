@@ -42,7 +42,7 @@ npx nx serve dashboard
 #### 4. Access the Applications
 - **Frontend**: http://localhost:4200
 - **Backend API**: http://localhost:3003/api
-- **API Documentation**: http://localhost:3003/api/docs (Swagger is enabled)
+- **API Documentation on Swagger**: http://localhost:3003/api/docs (You will need to enabled backend for this)
 - **API Req Postman collectiom**: [Link](https://github.com/mspatell/turbo-task-mgt/blob/main/TurboVets-API-Postman-Collection.json)
 
 #### 5. Demo Credentials
