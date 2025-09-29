@@ -43,7 +43,7 @@ npx nx serve dashboard
 - **Frontend**: http://localhost:4200
 - **Backend API**: http://localhost:3003/api
 - **API Documentation**: http://localhost:3003/api/docs (Swagger is enabled)
-- **API Req Postman collectiom: [Link](https://github.com/mspatell/turbo-task-mgt/blob/main/TurboVets-API-Postman-Collection.json)
+- **API Req Postman collectiom**: [Link](https://github.com/mspatell/turbo-task-mgt/blob/main/TurboVets-API-Postman-Collection.json)
 
 #### 5. Demo Credentials
 The application includes seeded demo users:
