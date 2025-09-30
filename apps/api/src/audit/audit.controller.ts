@@ -11,7 +11,7 @@ import {
 import { Response } from 'express';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { CurrentUser, Roles, UserRole, RolesGuard } from '@turbo-vets/auth';
-import { AuditService } from '../services/audit.service';
+import { AuditService } from './audit.service';
 import { User } from '../entities/user.entity';
 import { AuditAction, AuditResource } from '../entities/audit-log.entity';
 import {

@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import * as bcrypt from 'bcryptjs';
 import { User } from '../entities/user.entity';
-import { AuditService } from '../services/audit.service';
+import { AuditService } from '../audit/audit.service';
 import { AuditAction, AuditResource } from '../entities/audit-log.entity';
 import { JwtPayload } from './jwt.strategy';
 import { UserRole } from '@turbo-vets/auth';

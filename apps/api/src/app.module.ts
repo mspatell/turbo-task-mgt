@@ -16,7 +16,7 @@ import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { RolesGuard } from '@turbo-vets/auth';
 
 // Services
-import { AuditService } from './services/audit.service';
+import { AuditService } from './audit/audit.service';
 import { DataSeederService } from './seeders/data-seeder.service';
 
 // Controllers

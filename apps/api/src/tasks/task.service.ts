@@ -5,7 +5,7 @@ import { Task, TaskStatus, TaskPriority, TaskCategory } from '../entities/task.e
 import { User } from '../entities/user.entity';
 import { UserRole } from '@turbo-vets/auth';
 import { Organization } from '../entities/organization.entity';
-import { AuditService } from '../services/audit.service';
+import { AuditService } from '../audit/audit.service';
 import { AuditAction, AuditResource } from '../entities/audit-log.entity';
 
 export interface CreateTaskDto {
